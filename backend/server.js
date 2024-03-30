@@ -27,6 +27,9 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to KT's application." });
 });
 
+require('./app/routes/auth.route')(app);
+require('./app/routes/user.route')(app);
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
